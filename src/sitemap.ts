@@ -16,9 +16,9 @@ export function getRoutes(options: ResolvedOptions) {
 
 export function getFormattedSitemap(options: ResolvedOptions, routes: string[]) {
   return routes.map(route => ({
-    url: new URL(route, options.hostname).href,
-    changefreq: options.changefreq,
-    priority: options.priority,
-    lastmod: options.lastmod,
+    url: new URL(options.pathPrefix + route, options.hostname).href,
+    changefreq: options.changefreq instanceof Function ? options.changefreq(route) : options.changefreq,
+    priority: options.priority instanceof Function ? options.priority(route) : options.priority,
+    lastmod: options.lastmod instanceof Function ? options.lastmod(route) : options.lastmod,
   }))
 }

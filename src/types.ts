@@ -36,6 +36,12 @@ interface Options {
    */
   hostname: string
   /**
+   * Path prefix between host and route
+   * Example: 'docs'
+   * @default ''
+   */
+  pathPrefix: string
+  /**
    * Array of strings with dynamic routes.
    * Example: ['/routes1', '/route2/sub-route']
    * @default []
@@ -56,17 +62,17 @@ interface Options {
    * Change frequency option for sitemap
    * @default 'daily'
    */
-  changefreq: string
+  changefreq: string | ((route: string) => string)
   /**
    * Priority option for sitemap
    * @default 1
    */
-  priority: number
+  priority: number | ((route: string) => number)
   /**
    * Last modification option for sitemap
    * @default new Date()
    */
-  lastmod: Date
+  lastmod: Date | ((route: string) => Date)
   /**
    * Converts XML into a human readable format
    * @default false

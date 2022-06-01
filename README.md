@@ -20,6 +20,13 @@
 
 Base URI.
 
+### pathPrefix
+
+- **Type:** `string`
+- **Default:** `'docs'`
+
+Specify a path prefix to be added to all paths.
+
 ### dynamicRoutes
 
 - **Type:** `string[]`
@@ -54,25 +61,25 @@ generateSitemap({
 - **Type:** `string`
 - **Default:** `'dist'`
 
-Output directory.
+Output/Scan directory.
 
 ### changefreq
 
-- **Type:** `string`
+- **Type:** `string | (route: string) => string`
 - **Default:** `'daily'`
 
 Change frequency option for sitemap.
 
 ### priority
 
-- **Type:** `number`
+- **Type:** `number | (route: string) => number`
 - **Default:** `1`
 
 Priority option for sitemap.
 
 ### lastmod
 
-- **Type:** `Date`
+- **Type:** `Date | (route: string) => Date`
 - **Default:** `new Date()`
 
 Last modification option for sitemap.

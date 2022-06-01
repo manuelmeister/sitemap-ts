@@ -54,4 +54,19 @@ describe('Sitemap', () => {
       ]
     `)
   })
+
+  test('Get formatted sitemap with pathPrefix', async () => {
+    expect(getFormattedSitemap(resolveOptions({ pathPrefix: 'prefix' }), ['/route'])).toMatchInlineSnapshot([{
+      lastmod: expect.any(Date),
+    }], `
+      [
+        {
+          "changefreq": "daily",
+          "lastmod": Any<Date>,
+          "priority": 1,
+          "url": "http://localhost/prefix/route",
+        },
+      ]
+    `)
+  })
 })

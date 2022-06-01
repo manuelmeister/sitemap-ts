@@ -4,6 +4,7 @@ export function resolveOptions(userOptions: UserOptions): ResolvedOptions {
   return Object.assign(
     {
       hostname: 'http://localhost/',
+      pathPrefix: '',
       dynamicRoutes: [],
       exclude: [],
       outDir: 'dist',

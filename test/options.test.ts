@@ -13,6 +13,7 @@ describe('Options', () => {
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
+        "pathPrefix": "",
         "priority": 1,
         "readable": false,
         "robots": [
@@ -41,6 +42,7 @@ describe('Options', () => {
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
+        "pathPrefix": "",
         "priority": 1,
         "readable": false,
         "robots": [
@@ -77,6 +79,7 @@ describe('Options', () => {
         "hostname": "http://localhost/",
         "lastmod": Any<Date>,
         "outDir": "dist",
+        "pathPrefix": "",
         "priority": 1,
         "readable": false,
         "robots": [

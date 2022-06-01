@@ -12,7 +12,7 @@ export function generateSitemap(options: UserOptions = {}) {
   const resolvedOptions: ResolvedOptions = resolveOptions(options)
   // robots.txt
   const robotRules = getRules(resolvedOptions.robots)
-  const robotContent = getContent(robotRules, resolvedOptions.hostname)
+  const robotContent = getContent(robotRules, resolvedOptions.hostname + resolvedOptions.pathPrefix)
   writeFileSync(getResolvedPath('robots.txt', resolvedOptions), robotContent)
 
   // sitemap.xml
@@ -32,4 +32,3 @@ export function generateSitemap(options: UserOptions = {}) {
 }
 
 export * from './types'
-export default generateSitemap
